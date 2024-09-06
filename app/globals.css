@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+/* It makes the HTML progress bar filling smooth when value change. */
+progress::-webkit-progress-value {
+  transition: 0.6s width ease-out;
+}
+
+@layer base {
+  .btn-gradient {
+    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
+  }
+  .btn {
+    @apply !capitalize;
+  }
+}
+
+.container {
+  padding: 2rem;
+  font-size: 1.3rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+form button {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
