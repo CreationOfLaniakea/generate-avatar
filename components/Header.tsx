@@ -8,21 +8,18 @@ import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.webp";
 import config from "@/config";
+import {Crisp} from "crisp-sdk-web";
 
 const links: {
   href: string;
   label: string;
 }[] = [
   {
-    href: "/#pricing",
-    label: "Pricing",
+    href: "/blog",
+    label: "Blog",
   },
   {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
+    href: "/faq",
     label: "FAQ",
   },
 ];

@@ -6,6 +6,8 @@ import { getSEOTags } from "@/libs/seo";
 import ClientLayout from "@/components/LayoutClient";
 import config from "@/config";
 import "./globals.css";
+import {NextAuthProvider} from "@/context/next-auth-context";
+import {CommonProvider} from "@/context/common-context";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -29,8 +31,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </head>
       )}
       <body>
-        {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-        <ClientLayout>{children}</ClientLayout>
+      <NextAuthProvider>
+          <CommonProvider>
+              {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
+              <ClientLayout>{children}</ClientLayout>
+          </CommonProvider>
+      </NextAuthProvider>
       </body>
     </html>
   );

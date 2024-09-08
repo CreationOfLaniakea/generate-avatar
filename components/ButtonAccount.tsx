@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,6 +5,8 @@ import { Popover, Transition } from "@headlessui/react";
 import { User } from "@supabase/supabase-js";
 import { createClient } from "@/libs/supabase/client";
 import apiClient from "@/libs/api";
+import {useSession, signOut} from "next-auth/react";
+import {useCommonContext} from "@/context/common-context";
 
 // A button to show user some account actions
 //  1. Billing: open a Stripe Customer Portal to manage their billing (cancel subscription, update payment method, etc.).
@@ -13,26 +14,39 @@ import apiClient from "@/libs/api";
 //     This is only available if the customer has a customerId (they made a purchase previously)
 //  2. Logout: sign out and go back to homepage
 // See more at https://shipfa.st/docs/components/buttonAccount
+// const supabase = createClient();
+// const [user, setUser] = useState<User>(null);
+
 const ButtonAccount = () => {
-  const supabase = createClient();
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [user, setUser] = useState<User>(null);
 
-  useEffect(() => {
-    const getUser = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+  const {
+    user,
+    setShowLogoutModal
+  } = useCommonContext()
 
-      setUser(user);
-    };
-
-    getUser();
-  }, [supabase]);
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     const {
+  //       data: { user },
+  //     } = await supabase.auth.getUser();
+  //
+  //     setUser(user);
+  //   };
+  //
+  //   getUser();
+  //
+  // }, [supabase]);
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    window.location.href = "/";
+    sessionStorage.removeItem("user_id");
+    sessionStorage.removeItem("image");
+    sessionStorage.removeItem("email");
+    setShowLogoutModal(false);
+    signOut({callbackUrl: "/"}).then(r => console.log(r))
+    // await supabase.auth.signOut();
+    // window.location.href = "/";
   };
 
   const handleBilling = async () => {
@@ -59,9 +73,9 @@ const ButtonAccount = () => {
       {({ open }) => (
         <>
           <Popover.Button className="btn">
-            {user?.user_metadata?.avatar_url ? (
+            {user?.image ? (
               <img
-                src={user?.user_metadata?.avatar_url}
+                src={user?.image}
                 alt={"Profile picture"}
                 className="w-6 h-6 rounded-full shrink-0"
                 referrerPolicy="no-referrer"
@@ -74,8 +88,8 @@ const ButtonAccount = () => {
               </span>
             )}
 
-            {user?.user_metadata?.name ||
-              user?.email?.split("@")[0] ||
+            {user?.name ||
+                user?.email?.split("@")[0] ||
               "Account"}
 
             {isLoading ? (
@@ -108,8 +122,9 @@ const ButtonAccount = () => {
             <Popover.Panel className="absolute left-0 z-10 mt-3 w-screen max-w-[16rem] transform">
               <div className="overflow-hidden rounded-xl shadow-xl ring-1 ring-base-content ring-opacity-5 bg-base-100 p-1">
                 <div className="space-y-0.5 text-sm">
+
                   <button
-                    className="flex items-center gap-2 hover:bg-base-300 duration-200 py-1.5 px-4 w-full rounded-lg font-medium"
+                    className="flex hidden items-center gap-2 hover:bg-base-300 duration-200 py-1.5 px-4 w-full rounded-lg font-medium"
                     onClick={handleBilling}
                   >
                     <svg
@@ -126,6 +141,7 @@ const ButtonAccount = () => {
                     </svg>
                     Billing
                   </button>
+
                   <button
                     className="flex items-center gap-2 hover:bg-error/20 hover:text-error duration-200 py-1.5 px-4 w-full rounded-lg font-medium"
                     onClick={handleSignOut}

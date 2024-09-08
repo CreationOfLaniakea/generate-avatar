@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-avatar_display-element */
 import React from "react";
 
 const features = [

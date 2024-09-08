@@ -13,24 +13,40 @@ interface FAQItemProps {
 
 const faqList: FAQItemProps[] = [
   {
-    question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    question: "What is Generate Avatar?",
+    answer: <div className="space-y-2 leading-relaxed">
+        Generate-Avatar.com is a cutting-edge tool designed to seamlessly create distinctive avatars using artificial intelligence, ideal for enhancing profiles across various digital platforms.    </div>,
   },
   {
-    question: "Can I get a refund?",
+    question: "How does Generate Avatar work?",
     answer: (
       <p>
-        Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
-      </p>
+          Simply enter a description of the avatar you envision, choose your preferred style and colors, and hit the generate button. It’s really that straightforward!      </p>
     ),
   },
   {
-    question: "I have another question",
+    question: "Can I use the avatars for commercial purposes?",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, contact us by email</div>
+        <div className="space-y-2 leading-relaxed">
+            Yes, indeed! You own the copyright to every avatar you produce with our tool. You are free to use them in your commercial projects or market them as you see fit.
+        </div>
     ),
   },
+    {
+        question: "What kind of avatars can I create?",
+        answer: (
+            <div className="space-y-2 leading-relaxed">
+                With Generate-Avatar.com, you have the ability to create a wide range of avatars that suit any digital environment. Whether you’re aiming for a modern, vibrant, or subtle design, our AI is equipped to meet your specifications and help you develop avatars that perfectly match your project’s identity and branding.
+            </div>
+        ),
+    },
+    {
+        question: "Do I need to be skilled in design to use Generate Avatar?",
+        answer: (
+            <div className="space-y-2 leading-relaxed">
+                Not at all! Generate-Avatar.com is designed to be intuitive and easy to use, removing the need for any previous design expertise. Just let our platform handle the details, and you focus on creating the perfect avatar.            </div>
+        ),
+    },
 ];
 
 const FaqItem = ({ item }: { item: FAQItemProps }) => {
@@ -97,8 +113,8 @@ const FAQ = () => {
   return (
     <section className="bg-base-200" id="faq">
       <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
-        <div className="flex flex-col text-left basis-1/2">
-          <p className="inline-block font-semibold text-primary mb-4">FAQ</p>
+        <div className="flex flex-col justify-center text-left basis-1/2">
+          {/*<p className="inline-block font-semibold text-primary mb-4">FAQ</p>*/}
           <p className="sm:text-4xl text-3xl font-extrabold text-base-content">
             Frequently Asked Questions
           </p>

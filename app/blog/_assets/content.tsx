@@ -1,7 +1,8 @@
 import type { JSX } from "react";
 import Image, { StaticImageData } from "next/image";
-import marcImg from "@/app/blog/_assets/images/authors/marc.png";
-import introducingSupabaseImg from "@/public/blog/introducing-supabase/header.png";
+import marcImg from "@/app/blog/_assets/images/authors/auth.webp";
+// import introducingSupabaseImg from "@/public/blog/introducing-supabase/header.png";
+import introducingSupabaseImg from "@/public/blog/generate-avatar-story/1.webp"
 
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
@@ -133,12 +134,12 @@ export const authors: authorType[] = [
     // The slug to use in the URL, from the authorSlugs object above.
     slug: authorSlugs.marc,
     // The name to display in the author's bio. Up to 60 characters.
-    name: "Marc Lou",
+    name: "Liu xingquan",
     // The job to display in the author's bio. Up to 60 characters.
-    job: "Maker of ByeDispute",
+    job: "Fight!!",
     // The description of the author to display in the author's bio. Up to 160 characters.
     description:
-      "Marc is a developer and an entrepreneur. He's built 20 startups in the last 3 years. 6 were profitable and 3 were acquired. He's currently building ByeDispute, the #1 Stripe Chargebacks Protection tool.",
+        "Only through hardship can one grow",
     // The avatar of the author to display in the author's bio and avatar badge. It's better to use a local image, but you can also use an external image (https://...)
     avatar: marcImg,
     // A list of social links to display in the author's bio.
@@ -146,17 +147,12 @@ export const authors: authorType[] = [
       {
         name: socialIcons.twitter.name,
         icon: socialIcons.twitter.svg,
-        url: "https://twitter.com/marc_louvion",
-      },
-      {
-        name: socialIcons.linkedin.name,
-        icon: socialIcons.linkedin.svg,
-        url: "https://www.linkedin.com/in/marclouvion/",
+        url: "https://x.com/Focus_Influence",
       },
       {
         name: socialIcons.github.name,
         icon: socialIcons.github.svg,
-        url: "https://github.com/Marc-Lou-Org/ship-fast",
+        url: "https://github.com/CreationOfLaniakea",
       },
     ],
   },
@@ -200,12 +196,12 @@ const styles: {
 export const articles: articleType[] = [
   {
     // The unique slug to use in the URL. It's also used to generate the canonical URL.
-    slug: "introducing-supabase",
+    slug: "generate-avatar-story",
     // The title to display in the article page (h1). Less than 60 characters. It's also used to generate the meta title.
-    title: "Introducing Supabase to ShipFast",
+    title: "From Big Tech to Entrepreneur: A Programmer’s Tale of Resilience and Innovation",
     // The description of the article to display in the article page. Up to 160 characters. It's also used to generate the meta description.
     description:
-      "Supabase is an open-source Firebase alternative. It's a great tool for building a backend for your app. It's now integrated with ShipFast!",
+      "Navigating Through Uncertainty: My Journey as a Programmer",
     // An array of categories of the article. It's used to generate the category badges, the category filter, and more.
     categories: [
       categories.find((category) => category.slug === categorySlugs.feature),
@@ -213,7 +209,7 @@ export const articles: articleType[] = [
     // The author of the article. It's used to generate a link to the author's bio page.
     author: authors.find((author) => author.slug === authorSlugs.marc),
     // The date of the article. It's used to generate the meta date.
-    publishedAt: "2023-11-20",
+    publishedAt: "2024-09-07",
     image: {
       // The image to display in <CardArticle /> components.
       src: introducingSupabaseImg,
@@ -223,68 +219,85 @@ export const articles: articleType[] = [
     },
     // The actual content of the article that will be shown under the <h1> title in the article page.
     content: (
-      <>
-        <Image
-          src={introducingSupabaseImg}
-          alt="Supabase and ShipFast logo combined"
-          width={700}
-          height={500}
-          priority={true}
-          className="rounded-box"
-          placeholder="blur"
-        />
-        <section>
-          <h2 className={styles.h2}>Introduction</h2>
-          <p className={styles.p}>
-            Supabase is an open-source Firebase alternative. It&apos;s a great
-            tool for building a backend for your app. It&apos;s now integrated
-            with ShipFast!
-          </p>
-        </section>
+        <>
+          <Image
+              src={introducingSupabaseImg}
+              alt="Supabase and ShipFast logo combined"
+              width={700}
+              height={500}
+              priority={true}
+              className="rounded-box"
+              placeholder="blur"
+          />
+          <section>
+            <h2 className={styles.h2}>Introduction</h2>
+            <p className={styles.p}>
+              At 32, after facing a layoff from a major tech company and a six-month career hiatus, I find myself at a
+              significant crossroads. The world of big tech, once a stable ground, now feels like shifting sands beneath
+              my feet. But rather than seeing this as a setback, I am viewing it as a compelling push toward
+              entrepreneurship and self-reliance. This is my story of pivoting from a traditional programming role into
+              carving a niche in creating profitable web tools through relentless effort and strategic thinking.
+            </p>
+          </section>
 
-        <section>
-          <h3 className={styles.h3}>1. Create a supabase account</h3>
-          <p className={styles.p}>
-            First, go to{" "}
-            <a href="https://supabase.com/" className="link link-primary">
-              Supabase
-            </a>{" "}
-            and create an account. It&apos;s free for up to 10,000 rows per
-            table.
-            <br />
-            Then create a new project and a new table. You can use the following
-            SQL schema:
-          </p>
+          <section>
+            <h3 className={styles.h3}>1. The Backdrop:</h3>
+            <p className={styles.p}>
+              As a seasoned programmer at a leading tech firm, I enjoyed the challenges and the perks that came with the
+              job. However, the tech industry, known for its relentless pace and competitive nature, also comes with its
+              volatility—layoffs being a part of the package. Six months ago, I was part of a widespread downsizing,
+              which
+              left me reassessing my career and life goals.
+            </p>
+          </section>
 
-          <pre className={styles.code}>
-            <code>
-              {`CREATE TABLE public.users (
-  id bigint NOT NULL DEFAULT nextval('users_id_seq'::regclass),
-  email text NOT NULL,
-  password text NOT NULL,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  updated_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT users_pkey PRIMARY KEY (id)
-);`}
-            </code>
-          </pre>
-        </section>
+          <section>
+            <h3 className={styles.h3}>2.Embracing Entrepreneurship:</h3>
+            <p className={styles.p}>
+              The layoff served as a catalyst for a significant career pivot. I decided to channel my programming skills
+              into developing web tools that could potentially turn into a sustainable business. The idea was not just
+              about financial gain but about creating something valuable and owning my success.
+            </p>
+          </section>
 
-        <section>
-          <h3 className={styles.h3}>2. Add your credentials to ShipFast</h3>
-          <p className={styles.p}>
-            Copy the <span className={styles.codeInline}>API URL</span> and{" "}
-            <span className={styles.codeInline}>API Key</span> from your
-            Supabase project settings and add them to your ShipFast project
-            settings. Add these files to your project:
-          </p>
+          <section>
+            <h3 className={styles.h3}>3.The Plan:</h3>
+            <p className={styles.p}>
+              My strategy is simple yet demanding: outwork everyone. In the world of startups and technology, effort can equalize the playing field. By dedicating myself to longer hours, continuous learning, and iterative development, I aim to build web applications that are both innovative and essential. Calm, strategic thinking aids me in navigating the competitive business landscape, ensuring that each step I take is measured and purposeful.
+            </p>
+          </section>
 
-          <ul className={styles.ul}>
-            <li className={styles.li}>.env.local</li>
-            <li className={styles.li}>.env.production</li>
-          </ul>
-        </section>
-      </>
+          <section>
+            <h3 className={styles.h3}>4.Current Progress:</h3>
+            <p className={styles.p}>
+              I am currently in the initial stages of developing my first web tool. This tool aims to simplify certain tasks for developers, potentially saving hours and increasing productivity. By focusing on utility and user experience, I am hoping to carve out a niche that will set the groundwork for more specialized tools in the future.
+            </p>
+          </section>
+
+          <section>
+            <h3 className={styles.h3}>5.Looking Ahead:</h3>
+            <p className={styles.p}>
+              The journey from being an employee to an entrepreneur is fraught with challenges, but it is also exhilarating. As I continue to develop my website and tools, I am learning the intricacies of business, marketing, and customer engagement. The goal is not just to survive but to thrive and perhaps, in the process, inspire others who might find themselves in similar situations.
+            </p>
+          </section>
+
+          <section>
+            <h3 className={styles.h3}>6.Conclusion:</h3>
+            <p className={styles.p}>
+              Transitioning from a big tech employee to an independent entrepreneur is a bold move, especially amid the uncertainties of a layoff. However, with relentless effort, strategic planning, and a focus on innovation, it’s possible to turn adversity into opportunity. This is just the beginning of my journey, and I am committed to making it a successful one.
+
+            </p>
+          </section>
+
+          <section>
+            <h3 className={styles.h3}>7.Blog Description:</h3>
+            <p className={styles.p}>
+              Follow the inspiring journey of a former big tech programmer who, after facing a layoff, turns to entrepreneurship to build innovative web tools. Discover how strategic planning and extraordinary effort are shaping his path to success.
+
+              This blog aims to share insights and experiences as I navigate through this transformative phase of my career, hoping to connect with others in the tech community and beyond who might be contemplating or embarking on similar ventures.
+            </p>
+          </section>
+        </>
     ),
   },
 ];

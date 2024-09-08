@@ -8,6 +8,9 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import PageComponent from "@/app/PageComponent";
+import Scrolling from "@/components/brands-scrolling-banner-with-two-rows/Scrolling";
+import {SessionProvider} from "next-auth/react";
+import Exhibition from "@/components/place-list-grid/Ehibition";
 
 export default function Home() {
     return (
@@ -17,10 +20,12 @@ export default function Home() {
             </Suspense>
             <main>
                 <PageComponent />
+                <Scrolling></Scrolling>
+                {/*<Exhibition ></Exhibition>*/}
                 <Hero />
-                <Problem />
-                <FeaturesAccordion />
-                <Pricing />
+                {/*<Problem />*/}
+                {/*<FeaturesAccordion />*/}
+                {/*<Pricing />*/}
                 <FAQ />
                 <CTA />
             </main>
