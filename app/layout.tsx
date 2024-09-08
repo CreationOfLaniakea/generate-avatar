@@ -8,6 +8,7 @@ import config from "@/config";
 import "./globals.css";
 import {NextAuthProvider} from "@/context/next-auth-context";
 import {CommonProvider} from "@/context/common-context";
+import {GoogleAnalytics} from '@next/third-parties/google';
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <PlausibleProvider domain={config.domainName} />
         </head>
       )}
+
+      {
+          process.env.NEXT_PUBLIC_GOOGLE_OPEN != '0' ?
+              <head>
+                  <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}/>
+              </head>
+              :
+              null
+      }
+      <head>
+          <script src="https://accounts.google.com/gsi/client" async defer></script>
+      </head>
+
       <body>
       <NextAuthProvider>
           <CommonProvider>
