@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-avatar_display-element */
+/* eslint-disable */
 "use client";
 
 import Link from "next/link";

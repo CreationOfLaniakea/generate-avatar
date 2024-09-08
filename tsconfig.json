@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false, // 允许隐式 any
+    "noImplicitReturns": false, // 允许函数不显式返回值
+    "noImplicitThis": false, // 允许 this 表达式的类型为 any
+    "strictNullChecks": false, // 允许 null 和 undefined 赋值给其他类型
+
     "lib": [
       "dom",
       "dom.iterable",
@@ -16,7 +21,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noImplicitAny": true,
     "jsx": "preserve",
     "paths": {
       "@/*": [

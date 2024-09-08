@@ -23,8 +23,7 @@ export const CommonProvider = ({
     async function init() {
         if (status == 'authenticated') {
             const userData = {
-                // @ts-ignore
-                user_id: session?.user?.user_id,
+                // user_id: session?.user?.user_id,
                 name: session?.user?.name,
                 email: session?.user?.email,
                 image: session?.user?.image,

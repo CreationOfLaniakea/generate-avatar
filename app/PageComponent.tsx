@@ -50,7 +50,7 @@ export default function PageComponent() {
         showLogoutModal,
     } = useCommonContext()
 
-    const handleSubmit = async (e: { preventDefault: () => void; target: { prompt: { value: any; }; }; }) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         //限制策略
