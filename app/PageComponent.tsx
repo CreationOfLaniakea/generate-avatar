@@ -83,7 +83,6 @@ export default function PageComponent() {
             done = readerDone;
         }
 
-
         //执行
         setSubmit(false);
         const response = await fetch("/api/predictions", {
@@ -108,6 +107,7 @@ export default function PageComponent() {
             ) {
             await sleep(1000);
             const response = await fetch("/api/predictions/" + prediction.id);
+            console.log("prediction_id:", prediction.id);
             prediction = await response.json();
             if (response.status !== 200) {
                 setError(prediction.detail);
@@ -115,18 +115,18 @@ export default function PageComponent() {
             }
             setPrediction(prediction);
 
-            if(prediction.output) {
-                //图片存储
-                const requestData = {
-                    image: prediction.output[prediction.output.length - 1],
-                    email: user?.email,
-                }
-
-                const response_image = await fetch(`/api/chat/userImage`, {
-                    method: 'POST',
-                    body: JSON.stringify(requestData)
-                });
-            }
+            // if(prediction.output) {
+            //     //图片存储
+            //     const requestData = {
+            //         image: prediction.output[prediction.output.length - 1],
+            //         email: user?.email,
+            //     }
+            //
+            //     const response_image = await fetch(`/api/chat/userImage`, {
+            //         method: 'POST',
+            //         body: JSON.stringify(requestData)
+            //     });
+            // }
 
         }
         setSubmit(true);
