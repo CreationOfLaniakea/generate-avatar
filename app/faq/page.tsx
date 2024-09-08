@@ -9,6 +9,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import PageComponent from "@/app/PageComponent";
 import Scrolling from "@/components/brands-scrolling-banner-with-two-rows/Scrolling";
+import {getSEOTags} from "@/libs/seo";
 
 export default function Home() {
     return (
