@@ -190,7 +190,7 @@ export default function PageComponent() {
                             />
                         </div>
                     )}
-                    <p className="py-3 text-rose-700 text-xl font-bold opacity-50">status: {prediction.status}</p>
+                    <p className="py-3 text-rose-700 text-xl font-bold opacity-50">status: {prediction.status} (Do not refresh.)</p>
                 </>
             )}
         </div>

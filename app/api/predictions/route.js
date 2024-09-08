@@ -21,9 +21,10 @@ export async function POST(request) {
   const { prompt } = await request.json();
 
   // const output = await replicate.run("bytedance/sdxl-lightning-4step:5f24084160c9089501c1b3545d9be3c27883ae2239b6f412990e82d4a6210f8f", { input });
+  //version: '5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf',
 
   const options = {
-    version: '5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf',
+    version: '683d19dc312f7a9f0428b04429a9ccefd28dbf7785fef083ad5cf991b65f406f',
     input: {
       prompt: prompt,
     }

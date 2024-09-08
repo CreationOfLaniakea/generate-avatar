@@ -6,7 +6,7 @@ const config = {
   appName: "Generate Avatar",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Generate-Avatar.com is an innovative tool that leverages artificial intelligence to effortlessly create unique avatars, making it extremely convenient to customize your own.",
+    "Generate-Avatar.com is an innovative tool that leverages artificial intelligence to effortlessly create unique avatars, making it extremely convenient to customize your own. It is free.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "generate-avatar.com",
   crisp: {
