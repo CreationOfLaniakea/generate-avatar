@@ -1,4 +1,5 @@
 import {getDb} from "@/libs/db";
+import config from "@/config";
 
 function getCurrentDateIntl(): string {
     const formatter = new Intl.DateTimeFormat('en-US', {
@@ -33,7 +34,7 @@ export const limitQuery = async (email: string) => {
             return false;
         }
 
-        if(Number(user.count_curr) <= 20) {
+        if(Number(user.count_curr) <= config.limit) {
             await db.query('update user_login_count set email=$1,count_curr=$2,count_total=$3,click_date=$4,count_click=$5',
                 [email, Number(user.count_curr)+1, Number(user.count_total)+1, getCurrentDateIntl(), Number(user.count_click)+1]);
             return false;

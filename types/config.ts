@@ -1,3 +1,5 @@
+import internal from "node:stream";
+
 export type Theme =
   | "light"
   | "dark"
@@ -26,6 +28,7 @@ export interface ConfigProps {
   appName: string;
   appDescription: string;
   domainName: string;
+  limit: number;
   crisp: {
     id?: string;
     onlyShowOnRoutes?: string[];

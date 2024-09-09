@@ -11,6 +11,14 @@ import PageComponent from "@/app/PageComponent";
 import Scrolling from "@/components/brands-scrolling-banner-with-two-rows/Scrolling";
 import {SessionProvider} from "next-auth/react";
 import Exhibition from "@/components/place-list-grid/Ehibition";
+import {getSEOTags} from "@/libs/seo";
+import config from "@/config";
+
+export const metadata = getSEOTags({
+    title: `${config.appName}`,
+    description: `${config.appDescription}`,
+    canonicalUrlRelative: "/",
+});
 
 export default function Home() {
     return (

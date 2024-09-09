@@ -6,6 +6,7 @@ import ButtonGradient from "@/components/ButtonGradient";
 import ButtonSignin from "@/components/ButtonSignin";
 import {useCommonContext} from "@/context/common-context";
 import {collect_user_info} from "@/server/image_user";
+import config from "@/config";
 
 const sleep = (ms: number) => {
     return new Promise((r) => setTimeout(r, ms));
@@ -76,7 +77,7 @@ export default function PageComponent() {
 
                 const user: { resultsUser: boolean } = JSON.parse(str);
                 if(user.resultsUser) {
-                    alert("The website is currently starting up, with a limit of 20 uses per day. Please come back tomorrow!!");
+                    alert(`The website is currently starting up, with a limit of ${config.limit} uses per day. Please come back tomorrow!!`);
                     return;
                 }
             }
