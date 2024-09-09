@@ -17,7 +17,7 @@ import config from "@/config";
 export const metadata = getSEOTags({
     title: `${config.appName}`,
     description: `${config.appDescription}`,
-    canonicalUrlRelative: "/",
+    canonicalUrlRelative: "https://generate-avatar.com/",
 });
 
 export default function Home() {
