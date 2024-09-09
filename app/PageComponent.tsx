@@ -105,7 +105,7 @@ export default function PageComponent() {
             prediction.status !== "succeeded" &&
             prediction.status !== "failed"
             ) {
-            await sleep(1000);
+            await sleep(3000);
             const response = await fetch("/api/predictions/" + prediction.id);
             console.log("prediction_id:", prediction.id);
             prediction = await response.json();

@@ -24,7 +24,7 @@ export async function POST(request) {
   //version: '5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf',
 
   const options = {
-    version: '4acb778eb059772225ec213948f0660867b2e03f277448f18cf1800b96a65a1a',
+    version: 'ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4',
     input: {
       prompt: prompt,
     }
