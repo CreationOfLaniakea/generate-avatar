@@ -3,7 +3,8 @@ import { ConfigProps } from "./types/config";
 
 const config = {
   // REQUIRED
-  appName: "Generate an avatar instantly with your name or custom text!",
+  titleName: "Generate an avatar instantly with your name or custom text!",
+  appName: "Generate avatar",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
       "Generate-Avatar.com is an AI-powered tool that creates unique avatars effortlessly. Customize yours for free, making personalization easier than ever.",

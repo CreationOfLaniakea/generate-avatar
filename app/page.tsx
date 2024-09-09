@@ -15,7 +15,7 @@ import {getSEOTags} from "@/libs/seo";
 import config from "@/config";
 
 export const metadata = getSEOTags({
-    title: `${config.appName}`,
+    title: `${config.titleName}`,
     description: `${config.appDescription}`,
     canonicalUrlRelative: "https://generate-avatar.com/",
 });

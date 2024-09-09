@@ -26,6 +26,7 @@ export type Theme =
 
 export interface ConfigProps {
   appName: string;
+  titleName: string;
   appDescription: string;
   domainName: string;
   limit: number;
