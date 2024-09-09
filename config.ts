@@ -3,10 +3,10 @@ import { ConfigProps } from "./types/config";
 
 const config = {
   // REQUIRED
-  appName: "Generate Avatar",
+  appName: "Generate a unique avatar instantly from your name or any text input.",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Generate-Avatar.com is an innovative tool that leverages artificial intelligence to effortlessly create unique avatars, making it extremely convenient to customize your own. It is free.",
+      "Generate-Avatar.com is an innovative platform that uses advanced artificial intelligence to simplify the process of creating personalized avatars. Whether you're looking for a distinctive digital identity or just want to have fun experimenting with different styles, this tool makes it incredibly easy. With just a few clicks, you can generate avatars from your name, a short phrase, or even random text, and the AI will instantly provide a variety of options to choose from. Best of all, Generate-Avatar.com is completely free, making it accessible for everyone to enjoy. Whether you're customizing avatars for social media, gaming, or professional use, this tool delivers high-quality results in seconds. The convenience and creativity it offers make avatar creation both fun and effortless, ensuring a seamless experience for users of all kinds.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "generate-avatar.com",
   crisp: {
